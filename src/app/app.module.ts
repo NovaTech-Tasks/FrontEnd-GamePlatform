@@ -9,6 +9,7 @@ import { AboutComponent } from './compnents/about/about.component';
 import { NavComponent } from './compnents/nav/nav.component';
 import { ImgSliderComponent } from './compnents/img-slider/img-slider.component';
 import { CardViewComponent } from './compnents/card-view/card-view.component';
+import { GameMgmtComponent } from './compnents/game-mgmt/game-mgmt.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CardViewComponent } from './compnents/card-view/card-view.component';
     AboutComponent,
     NavComponent,
     ImgSliderComponent,
-    CardViewComponent
+    CardViewComponent,
+    GameMgmtComponent
   ],
   imports: [
     BrowserModule,
