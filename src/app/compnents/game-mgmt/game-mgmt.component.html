@@ -27,8 +27,16 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <th scope="row">1</th>
+        <tr *ngFor="let details of gamesData">
+          <th>{{details.gameId}}</th>
+          <th>{{details.gameName}}</th>
+          <th>{{details.gameDate}}</th>
+          <th>{{details.gameImg}}</th>
+          <th>
+            <button class="btn btn-danger">
+              Delete
+            </button>
+          </th>
         </tr>
         </tbody>
       </table>

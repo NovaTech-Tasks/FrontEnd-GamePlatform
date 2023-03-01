@@ -17,7 +17,7 @@ export class UserService {
   }
   signInUser(data:any){
     console.log(data);
-    return this.http.get(`http://localhost:8080/games/api/v1/users/${data.email}/${data.password}`).subscribe((res) =>{
+    return this.http.get( this.baseURL+`/${data.email}/${data.password}`).subscribe((res) =>{
       console.log(res);
       //ToDo:Save to local storage the email and pw
     })
