@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GamesService} from "../../service/games.service";
+import { FormGroup,FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-game-mgmt',
@@ -11,11 +12,19 @@ export class GameMgmtComponent implements OnInit {
   constructor(private gamesService:GamesService) { }
 
   ngOnInit(): void {
-    this.gamesService.getAllGames().subscribe((data:any) =>{
-      this.gamesData = data;
+    this.gamesService.getAllGames().subscribe((resp:any) =>{
+      this.gamesData = resp;
       console.log(this.gamesData);
 
     })
   }
 
+  deleteGame(gameData: any) {
+     this.gamesService.deleteSelected(gameData.gameId).subscribe((resp) =>{
+       console.log(resp);
+       this.gamesService.getAllGames();
+     },(error) =>{
+       console.log(error)
+     })
+  }
 }
