@@ -12,6 +12,7 @@ import { NavComponent } from './compnents/nav/nav.component';
 import { ImgSliderComponent } from './compnents/img-slider/img-slider.component';
 import { CardViewComponent } from './compnents/card-view/card-view.component';
 import { GameMgmtComponent } from './compnents/game-mgmt/game-mgmt.component';
+import { GameAddComponent } from './compnents/game-add/game-add.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GameMgmtComponent } from './compnents/game-mgmt/game-mgmt.component';
     NavComponent,
     ImgSliderComponent,
     CardViewComponent,
-    GameMgmtComponent
+    GameMgmtComponent,
+    GameAddComponent
   ],
     imports: [
         BrowserModule,
