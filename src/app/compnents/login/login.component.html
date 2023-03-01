@@ -1,18 +1,18 @@
 <div class="main-outer">
   <div class="sign-up">
     <h1>Simply Sign up with us</h1>
-    <form>
+    <form [formGroup]="createUser" (ngSubmit)="SaveUser()">
       <div class="input-group input-group-lg user-name">
         <span class="input-group-text" id="user-name">User Name</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" formControlName="userName">
       </div>
       <div class="input-group input-group-lg email">
         <span class="input-group-text" id="email">Email</span>
-        <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" formControlName="email">
       </div>
       <div class="input-group input-group-lg password">
         <span class="input-group-text" id="password">Password</span>
-        <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" formControlName="password">
       </div>
       <button type="submit" class="btn btn-success btn-lg btn-block">Sign up</button>
       <button type="reset" class="btn btn-danger btn-lg btn-block">Clear</button>
@@ -21,14 +21,14 @@
 
   <div class="sign-in">
     <h1>Already have an account</h1>
-    <form>
+    <form [formGroup]="signInUser" (ngSubmit)="saveSignInData()">
     <div class="input-group input-group-lg user-name s-in">
       <span class="input-group-text" id="user-name-sign-in">Email</span>
-      <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+      <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" formControlName="email">
     </div>
       <div class="input-group input-group-lg user-name">
         <span class="input-group-text" id="password-sign-in">Password</span>
-        <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" formControlName="password">
       </div>
       <button type="submit" class="btn btn-info btn-lg btn-block">Sign in</button>
       <button type="reset" class="btn btn-danger btn-lg btn-block">Clear</button>
