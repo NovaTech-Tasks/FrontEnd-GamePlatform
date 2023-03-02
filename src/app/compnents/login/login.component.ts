@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   SaveUser() {
     //console.log(this.createUser.value)
     this.userService.saveUser(this.createUser.value)
+    window.location.reload()
   }
 
   saveSignInData() {
