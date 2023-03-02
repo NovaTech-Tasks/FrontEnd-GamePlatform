@@ -10,20 +10,24 @@
   </menu>
     <div class="table-view">
       <h1>MANAGE GAMES</h1>
-      <form>
+
+      <form [formGroup]="gameDetails" (ngSubmit)="saveGameDetails()">
         <div class="mb-3">
-          <input type="text" class="form-control game-bar" placeholder="Game Name">
+          <input type="text" class="form-control game-bar" placeholder="Game Name" formControlName="gameName">
         </div>
         <div class="mb-3">
-          <input type="date" class="form-control game-bar" placeholder="Game Date">
+          <input type="date" class="form-control game-bar" placeholder="Game Date" formControlName="gameDate">
         </div>
         <div class="mb-3">
-          <input type="file" class="form-control game-bar" placeholder="Select Image" (change)="onChange($event)"/>
+          <input type="file" class="form-control game-bar" placeholder="Select Image" (change)="onChange($event)" formControlName="gameImg"/>
           <button type="submit" class="btn btn-success">Add New Game</button>
           <button type="reset" class="btn btn-danger clr-data">Clear</button>
         </div>
         <div class="mb-3">
           <input type="text" class="form-control game-bar" placeholder="Search Your Games">
+        </div>
+        <div class="img-viewer">
+          <img [src]="gameImage" alt=gameImgData width="500" height="300">
         </div>
 
       </form>

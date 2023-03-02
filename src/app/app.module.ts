@@ -13,6 +13,8 @@ import { ImgSliderComponent } from './compnents/img-slider/img-slider.component'
 import { CardViewComponent } from './compnents/card-view/card-view.component';
 import { GameMgmtComponent } from './compnents/game-mgmt/game-mgmt.component';
 import { GameAddComponent } from './compnents/game-add/game-add.component';
+import { NextDirective } from './next.directive';
+import { PrvDirective } from './prv.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { GameAddComponent } from './compnents/game-add/game-add.component';
     ImgSliderComponent,
     CardViewComponent,
     GameMgmtComponent,
-    GameAddComponent
+    GameAddComponent,
+    NextDirective,
+    PrvDirective
   ],
     imports: [
         BrowserModule,

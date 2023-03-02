@@ -59,4 +59,20 @@ export class GameMgmtComponent implements OnInit {
       subscriber.complete();
     }
   }
+  //game details form data send
+  gameDetails = new FormGroup({
+    gameName: new FormControl(''),
+    gameDate: new FormControl(''),
+    gameImg: new FormControl(''),
+  });
+
+  saveGameDetails() {
+    this.gameDetails.value.gameImg = this.gameImage;
+    this.gamesService.saveGameDetails(this.gameDetails.value).subscribe((resp) =>{
+      console.log(resp);
+    },error =>{
+      console.log(error);
+    })
+
+  }
 }
