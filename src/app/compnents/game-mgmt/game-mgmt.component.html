@@ -10,7 +10,6 @@
   </menu>
     <div class="table-view">
       <h1>MANAGE GAMES</h1>
-
       <form [formGroup]="gameDetails" (ngSubmit)="saveGameDetails()">
         <div class="mb-3">
           <input type="text" class="form-control game-bar" placeholder="Game Name" formControlName="gameName">
@@ -27,7 +26,7 @@
           <input type="text" class="form-control game-bar" placeholder="Search Your Games">
         </div>
         <div class="img-viewer">
-          <img [src]="gameImage" alt=gameImgData width="500" height="300">
+          <img [src]="gameImage" alt="Game Image Preview" width="500" height="300">
         </div>
 
       </form>

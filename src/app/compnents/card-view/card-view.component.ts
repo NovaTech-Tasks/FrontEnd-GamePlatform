@@ -6,8 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-view.component.scss']
 })
 export class CardViewComponent implements OnInit {
+  userNameToDisplay: any;
 
-  constructor() { }
+  constructor() {
+    this.getUserData();
+  }
+
+  getUserData(){
+    let userName = localStorage.getItem("userName");
+    this.userNameToDisplay = userName
+    console.log("hi")
+    console.log(userName)
+
+  }
 
   ngOnInit(): void {
   }
