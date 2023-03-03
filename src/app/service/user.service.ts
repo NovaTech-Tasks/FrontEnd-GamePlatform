@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {AuthService} from "../shared/auth.service";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private auth:AuthService) { }
   baseURL:any = "http://localhost:8080/games/api/v1/users";
   router : Router | any
 
@@ -25,12 +26,13 @@ export class UserService {
   signInUser(data:any){
     let returnData
     console.log(data);
-    localStorage.setItem("userEmail",data.email)
+
 
     function saveDataToLocalStorage(returnData:any) {
       localStorage.clear();
       localStorage.setItem("useId",returnData.id)
       localStorage.setItem("userName",returnData.userName)
+      localStorage.setItem("userEmail",data.email)
     }
 
     return this.http.get( this.baseURL+`/${data.email}/${data.password}`).subscribe((res) =>{
@@ -41,7 +43,7 @@ export class UserService {
      // this.router.navigate(['games'])
       saveDataToLocalStorage(returnData)
       alert("Login Success")
-      window.location.reload();
+      window.location.reload()
 
     },(error) => {
       console.error(error)

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl} from "@angular/forms";
 import {UserService} from "../../service/user.service";
+import {AuthService} from "../../shared/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   SaveUser() {
-    //console.log(this.createUser.value)
     this.userService.saveUser(this.createUser.value)
     window.location.reload()
   }
